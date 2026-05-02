@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F1 Performance UI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at center, #0a0a0a, #000);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+nav h1 {
+    color: red;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    animation: fadeIn 2s ease;
+}
+
+.hero p {
+    opacity: 0.7;
+}
+
+/* DRIVER CARDS */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255,0,0,0.2);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>F1 PRO</h1>
+</nav>
+
+<section class="hero">
+    <h2>Next-Gen Racing Experience</h2>
+    <p>High performance. Precision. Speed.</p>
+</section>
+
+<section class="container">
+    <div class="card">Max Verstappen</div>
+    <div class="card">Lewis Hamilton</div>
+    <div class="card">Charles Leclerc</div>
+</section>
+
+<script>
+// Motion effect on scroll
+window.addEventListener("scroll", () => {
+    document.body.style.backgroundPositionY = window.scrollY * 0.5 + "px";
+});
+</script>
+
+</body>
+</html>
